@@ -1,0 +1,7 @@
+F:\code\Windsurf\WindowService\obj\Debug\ApiWindowsService.csproj.AssemblyReference.cache
+F:\code\Windsurf\WindowService\obj\Debug\ApiWindowsService.csproj.CoreCompileInputs.cache
+F:\code\Windsurf\WindowService\bin\Debug\ApiWindowsService.exe.config
+F:\code\Windsurf\WindowService\bin\Debug\ApiWindowsService.exe
+F:\code\Windsurf\WindowService\bin\Debug\ApiWindowsService.pdb
+F:\code\Windsurf\WindowService\obj\Debug\ApiWindowsService.exe
+F:\code\Windsurf\WindowService\obj\Debug\ApiWindowsService.pdb
