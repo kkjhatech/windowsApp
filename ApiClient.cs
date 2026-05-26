@@ -17,7 +17,8 @@ namespace ApiWindowsService
         private string _bearerToken;
         private readonly string _loginUrl;
         private readonly string _pushUrl;
-        private readonly string _basicAuth;
+        private readonly string _username;
+        private readonly string _password;
 
         public ApiClient()
         {
@@ -26,7 +27,8 @@ namespace ApiWindowsService
 
             _loginUrl = ConfigurationManager.AppSettings["LoginApiUrl"];
             _pushUrl = ConfigurationManager.AppSettings["PushApiUrl"];
-            _basicAuth = ConfigurationManager.AppSettings["BasicAuthValue"];
+            _username = ConfigurationManager.AppSettings["Username"];
+            _password = ConfigurationManager.AppSettings["Password"];
         }
 
         public async Task LoginAsync()
@@ -34,7 +36,9 @@ namespace ApiWindowsService
             Console.WriteLine($"Logging in to {_loginUrl}...");
 
             var request = new HttpRequestMessage(HttpMethod.Post, _loginUrl);
-            request.Headers.Add("Authorization", _basicAuth);
+
+            var credentials = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{_username}:{_password}"));
+            request.Headers.Add("Authorization", $"Basic {credentials}");
 
             request.Content = new FormUrlEncodedContent(new[]
             {
